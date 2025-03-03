@@ -18,7 +18,7 @@ from lightgbm import LGBMClassifier,  LGBMRegressor
 from bayes_opt import BayesianOptimization
 import time
 
-df = pd.read_csv(r"/kaggle/input//WildBlueberryPollinationSimulationData.csv")
+df = pd.read_csv(r"/kaggle/input/blueberry/WildBlueberryPollinationSimulationData.csv")
 df.drop(['Row', 'fruitset', 'fruitmass', 'seeds'],axis=1,inplace=True)
 
 # 从DataFrame中提取特征名称列表
