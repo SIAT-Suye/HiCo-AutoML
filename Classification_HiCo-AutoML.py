@@ -20,8 +20,8 @@ from imblearn.under_sampling import RandomUnderSampler
 import time
 
 # Forest Fire Risk
-df_fire = pd.read_csv("D:\program/forest fire dataset/gds_fire_30mm.csv")
-df_nofire = pd.read_csv("D:\program/forest fire dataset/gds_nofire_30mm.csv")
+df_fire = pd.read_csv("/kaggle/input/forest fire dataset/gds_fire_30mm.csv")
+df_nofire = pd.read_csv("/kaggle/input/forest fire dataset/gds_nofire_30mm.csv")
 df = pd.concat([df_fire,df_nofire])
 
 df = df.rename(columns={'system:index': 'System:index', 'aspect': 'Aspect', 'days': 'Days', 'elevation': 'Elevation', 'evimax': 'EVImax', 
@@ -36,13 +36,13 @@ df = df.drop(features, axis = 1)
 df = df[df.apply(lambda row: row.isin([-99999.000000]).sum() == 0, axis=1)] 
 
 # Water Quality
-# df = pd.read_csv(r"D:\program\AutoForest/waterQuality.csv")
+# df = pd.read_csv(r"/kaggle/input//waterQuality.csv")
 # df = df.drop(df[df.is_safe=='#NUM!'].index) # 丢弃3项缺失值
 # df['is_safe'] = df['is_safe'].astype('int64')
 # df['ammonia'] = df['ammonia'].astype('float64')
 
 # Diabetes Diagnosis 
-# df = pd.read_csv(r"D:\program\AutoForest/diabetes_data.csv")
+# df = pd.read_csv(r"/kaggle/input//diabetes_data.csv")
 # df.drop(['PatientID','DoctorInCharge'],axis=1,inplace=True)
 
 # 从DataFrame中提取特征名称列表
