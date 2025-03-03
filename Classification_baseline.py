@@ -13,6 +13,16 @@ features = ['System:index', 'Time', 'Days', 'EVIsum', 'NDWIsum', 'NDVIsum', 'LST
 df = df.drop(features, axis = 1)
 df = df[df.apply(lambda row: row.isin([-99999.000000]).sum() == 0, axis=1)]
 
+# Water Quality
+# df = pd.read_csv(r"/kaggle/input//waterQuality.csv")
+# df = df.drop(df[df.is_safe=='#NUM!'].index) # 丢弃3项缺失值
+# df['is_safe'] = df['is_safe'].astype('int64')
+# df['ammonia'] = df['ammonia'].astype('float64')
+
+# Diabetes Diagnosis 
+# df = pd.read_csv(r"/kaggle/input//diabetes_data.csv")
+# df.drop(['PatientID','DoctorInCharge'],axis=1,inplace=True)
+
 X = df.drop(['Labels'], axis = 1).values
 y = df['Labels'].values
 
